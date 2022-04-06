@@ -64,6 +64,3 @@ class EventsDBService:
         setattr(event, "id", event_data.doc_id)
         return event
 
-e = Event()
-e.title="Butts"
-EventsDBService(TinyDB("event_db.json")).update_event(4, e)
