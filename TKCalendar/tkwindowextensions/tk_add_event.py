@@ -8,7 +8,6 @@ from eventsdbservice import EventsDBService
 from tkwidgetclasses.number_only_combobox import NumberOnlyCombobox
 from tkwidgetclasses.textfilled_entry import TextFilledEntry
 
-
 class TKAddEventExtension:
     """
     Extends an instantiated Tk or Toplevel window starting from the last grid row with
