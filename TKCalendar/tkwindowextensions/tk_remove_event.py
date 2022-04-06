@@ -1,7 +1,5 @@
 from tkinter import Label, Tk, Toplevel, S, Frame, NSEW, PhotoImage, Button, GROOVE, FLAT
-
 from tinydb import TinyDB
-
 from eventsdbservice import EventsDBService
 
 

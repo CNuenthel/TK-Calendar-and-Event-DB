@@ -130,6 +130,8 @@ class DayTopWindow(Toplevel):
     def add_event(self):
         """ Opens add event extension """
         if not self.extension:
+            if self.confirmation:
+                self.confirmation.destroy()
             self.extension = True
             self.extension = TKAddEventExtension(self, self.day, self.month, self.year, self._configure_event_box)
 
@@ -137,8 +139,10 @@ class DayTopWindow(Toplevel):
         """ Opens remove event extension """
         if not self.extension:
             if not self.event_box.curselection():
-                # TODO add a nice response to not selecting a box
-                print("Must select event!")
+                if self.confirmation:
+                    self.confirmation.destroy()
+                self.confirmation = Label(self, text="Choose an event.", font="Courier 10")
+                self.confirmation.grid(row=self.grid_size()[1], column=1, pady=10)
                 return
             selection = self.event_box.get(self.event_box.curselection()).strip()
             if selection not in ["No Events", "Select An Event"]:
@@ -151,8 +155,10 @@ class DayTopWindow(Toplevel):
         """ Change event extension """
         if not self.extension:
             if not self.event_box.curselection():
-                # TODO add a nice response to not selecting a box
-                print("Must select event!")
+                if self.confirmation:
+                    self.confirmation.destroy()
+                self.confirmation = Label(self, text="Choose an event.", font="Courier 10")
+                self.confirmation.grid(row=self.grid_size()[1], column=1, pady=10)
                 return
             selection = self.event_box.get(self.event_box.curselection()).strip()
             if selection not in ["No Events", "Select An Event"]:

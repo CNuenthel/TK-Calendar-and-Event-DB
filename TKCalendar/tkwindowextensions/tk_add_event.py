@@ -1,12 +1,11 @@
 from tkinter import Label, Tk, Toplevel, S, E, Frame, NSEW, PhotoImage, Button, CENTER, FLAT, SUNKEN
 from tkinter.ttk import Combobox, Style
-
 from tinydb import TinyDB
-
 from events.events import Event
 from eventsdbservice import EventsDBService
 from tkwidgetclasses.number_only_combobox import NumberOnlyCombobox
 from tkwidgetclasses.textfilled_entry import TextFilledEntry
+
 
 class TKAddEventExtension:
     """
@@ -63,6 +62,7 @@ class TKAddEventExtension:
             .pack(pady=8)
 
     def _make_title_entry(self):
+        """ Creates title text filled entry """
         self.title_entry = TextFilledEntry(self.main_frame, "Title", justify=CENTER)
         self.title_entry.pack(pady=8)
         self.title_entry.focus_set()  # Not so sure about this yet
@@ -151,8 +151,10 @@ class TKAddEventExtension:
 
         e = Event.create(ev_dict)
 
+        """ Destroy extension """
         self.main_frame.destroy()
 
+        """ Destroy previous extension confirmations """
         if self.root.confirmation:
             self.root.confirmation.destroy()
 
