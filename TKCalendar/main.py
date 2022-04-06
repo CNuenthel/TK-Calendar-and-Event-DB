@@ -70,8 +70,7 @@ class TKCalendar(Tk):
 
     def _configure_day_buttons(self):
         """ Set button text to date numbers """
-        self.dh.set_month_year(self.year, self.month)
-        dates = self.dh.date_list()  # Returns 35 dates (5 week calendar)
+        dates = self.dh.date_list(self.year, self.month)  # Returns 35 dates (5 week calendar)
         dates.extend([0 for _ in range(42 - len(dates))])  # Add zeros to dates to compensate for 42 date buttons
 
         for i, j in enumerate(dates):  # Configure button text to show dates

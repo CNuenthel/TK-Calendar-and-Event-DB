@@ -93,7 +93,7 @@ class DayTopWindow(Toplevel):
 
     def day_up(self):
         """ Increments up currently selected date by one day """
-        num_of_days = DateHandler().month_days(self.month, self.year)
+        num_of_days = DateHandler().days_in_month(self.month, self.year)
         self.day += 1
         if self.day > num_of_days:
             self.day = 1
@@ -117,7 +117,7 @@ class DayTopWindow(Toplevel):
             self.month -= 1
             if self.month < 1:
                 self.year -= 1
-            self.day = DateHandler().month_days(self.month, self.year)
+            self.day = DateHandler().days_in_month(self.month, self.year)
         self._configure_header()
         self.event_box.destroy()
         self._make_event_listbox()
