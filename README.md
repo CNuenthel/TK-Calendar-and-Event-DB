@@ -10,8 +10,6 @@ TK-Calendar is a Calendar GUI enhanced with an event database. Events are easy a
 ### Hovering the date buttons with a pointer will reactively highlight the date buttons for easy visibility. Current day is marked on the calendar as green, and unused date buttons are deactivated and unresponsive.
 
 # Intuitive Event Controller:
-
-##Adding Events..
 ![alt text](TKCalendar/.readme-images/cal3.png?raw=true)
 
 ## Changing Events...
