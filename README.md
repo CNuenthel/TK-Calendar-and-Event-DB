@@ -3,7 +3,7 @@ TKinter Calendar GUI with integrated TinyDB events manager
 
 TK-Calendar is a Calendar GUI enhanced with an event database. Events are easy and simple to customize with a topwindow GUI that allows for date picking and event manipulation. I initially made TK-Calendar as a plug in to my home-hub Cherry-Pi project. TK-Calendar can be integrated to any of your TK-Projects by simply changing inheritance of [The main window class: TKCalendar to Toplevel, rather than TK](TKCalendar/main.py) and binding a callable to open the calendar.
 
-A few useful tools for TKinter devs can be found in ![alt text](TKCalendar/tkwidgetclasses), such as reactive hover buttons, number only comboboxes, and text filled entries that clear text on clicking. 
+A few useful tools for TKinter devs can be found in [tkwidgetclasses](TKCalendar/tkwidgetclasses), such as reactive hover buttons, number only comboboxes, and text filled entries that clear text on clicking. 
 
 # A few features of TK-Calendar:
 
