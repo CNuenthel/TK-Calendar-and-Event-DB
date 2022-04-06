@@ -6,7 +6,7 @@ TK-Calendar is a Calendar GUI enhanced with an event database. Events are easy a
 # A few features of TK-Calendar:
 
 Reactive Date Buttons:
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/CNuenthel/TK-Calendar-and-Event-DB/blob/[branch]/image.jpg?raw=true)
 Hovering the date buttons with a pointer will reactively highlight the date buttons for easy visibility.
 
 Intuitive Event Controller:
