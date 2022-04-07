@@ -2,13 +2,11 @@ from datetime import datetime
 from functools import partial
 from tkinter import *
 
-from tinydb import TinyDB
-
-from datehandler import DateHandler as dH
-from eventcolor import EventColor
-from eventsdbservice import EventsDBService
+from events.eventdbcontroller import EventController
+from TKCalendar.datehandler.datehandler import DateHandler as dH
+from TKCalendar.tkconfiguration.eventcolor import EventColor
 from tkwidgetclasses.hover_button import HoverButton
-from topwindows import DayTopWindow
+from TKCalendar.toplevels.daytoplevel import DayTopWindow
 from tkwindowextensions.tk_legend import TKLegend
 
 
@@ -104,7 +102,8 @@ class TKCalendar(Tk):
     def _event_color_buttons(self):
         for button in self.date_buttons:
             if button["text"] != 0:
-                date_events = EventsDBService(TinyDB("event_db.json")).day_events(self.year, self.month, button["text"])
+                query = {"year": self.year, "month": self.month, "day": button["text"]}
+                date_events = EventController.find_by_elements(query)
                 if date_events:
                     categories = [event.category for event in date_events]
                     EventColor().colorize(button, categories)

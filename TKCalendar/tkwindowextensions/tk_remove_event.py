@@ -1,6 +1,5 @@
 from tkinter import Label, Tk, Toplevel, S, Frame, NSEW, PhotoImage, Button, GROOVE, FLAT
-from tinydb import TinyDB
-from eventsdbservice import EventsDBService
+from events.eventdbcontroller import EventController
 
 
 class TKRemoveEvent:
@@ -57,7 +56,7 @@ class TKRemoveEvent:
 
     def _get_event_data(self):
         """ Retrieves event data from DB """
-        self.event = EventsDBService(TinyDB("event_db.json")).find_by_id(self.id)
+        self.event = EventController.find_by_id(self.id)
 
     def _make_data_display(self):
         """ Displays event data in an extension"""
@@ -107,7 +106,7 @@ class TKRemoveEvent:
             self.root.confirmation.destroy()
         self.main_frame.destroy()
 
-        if EventsDBService(TinyDB("event_db.json")).remove_event(self.id):
+        if EventController.remove_doc(self.id):
             self.root.confirmation = Label(self.root, text="Event Removed", font="Courier 10")
         else:
             self.root.confirmation = Label(self.root, text="Sorry, something went wrong...", font="Courier 10")

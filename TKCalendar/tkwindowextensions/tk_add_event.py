@@ -1,8 +1,7 @@
 from tkinter import Label, Tk, Toplevel, S, E, Frame, NSEW, PhotoImage, Button, CENTER, FLAT, SUNKEN
 from tkinter.ttk import Combobox, Style
-from tinydb import TinyDB
 from events.events import Event
-from eventsdbservice import EventsDBService
+from events.eventdbcontroller import EventController
 from tkwidgetclasses.number_only_combobox import NumberOnlyCombobox
 from tkwidgetclasses.textfilled_entry import TextFilledEntry
 
@@ -158,7 +157,7 @@ class TKAddEventExtension:
         if self.root.confirmation:
             self.root.confirmation.destroy()
 
-        if EventsDBService(TinyDB("event_db.json")).insert(e):
+        if EventController.insert(e):
             self.root.confirmation = Label(self.root, text="Event Added!", font="Courier 10")
         else:
             self.root.confirmation = Label(self.root, text="Sorry, something went wrong...", font="Courier 10")

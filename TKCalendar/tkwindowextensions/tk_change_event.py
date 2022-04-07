@@ -1,8 +1,7 @@
 from tkinter import Label, Tk, Toplevel, E, Frame, NSEW, PhotoImage, Button, CENTER, FLAT, END
 from tkinter.ttk import Combobox, Style
-from tinydb import TinyDB
 from events.events import Event
-from eventsdbservice import EventsDBService
+from events.eventdbcontroller import EventController
 from tkwidgetclasses.number_only_combobox import NumberOnlyCombobox
 from tkwidgetclasses.textfilled_entry import TextFilledEntry
 
@@ -124,7 +123,7 @@ class TKChangeEvent:
 
     def _get_event_data(self):
         """ Retrieves event data from DB """
-        self.event = EventsDBService(TinyDB("event_db.json")).find_by_id(self.id)
+        self.event = EventController.find_by_id(self.id)
 
     def _configure_title(self):
         """ Configures title entry to show event title"""
@@ -177,10 +176,10 @@ class TKChangeEvent:
         self.title_entry.configure(bg="white")
         style.configure("TCombobox", fieldbackground="white", background="white")
 
-        e = Event.create(ev_dict)
+        event = Event.create(ev_dict)
 
         self.main_frame.destroy()
-        if EventsDBService(TinyDB("event_db.json")).update_event(self.id, e):
+        if EventController.update_event(event, self.id):
             self.root.confirmation = Label(self.root, text="Event Updated!", font="Courier 10")
         else:
             self.root.confirmation = Label(self.root, text="Sorry, something went wrong...", font="Courier 10")
