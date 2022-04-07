@@ -15,7 +15,7 @@ A few useful tools for TKinter devs can be found in [TKCalendar/tkwidgetclasses]
 ## Reactive Date Buttons:
 Hovering the date buttons with a pointer will reactively highlight the date buttons for easy visibility. Current day is marked on the calendar as green, and unused date buttons are deactivated and unresponsive.
 
-![alt text](readme-images/cal.png?raw=true)
+![](readme-images/cal.gif)
 
 # Intuitive Event Controller:
 Simple to use form to manually input events.
