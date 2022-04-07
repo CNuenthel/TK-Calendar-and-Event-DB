@@ -6,9 +6,9 @@ TK-Calendar is a Calendar GUI enhanced with an event database. Events are easy a
 A few useful tools for TKinter devs can be found in [TKCalendar/tkwidgetclasses](TKCalendar/tkwidgetclasses), such as reactive hover buttons, number only comboboxes, and text filled entries that clear text on clicking. 
 
 ## To Use
-• Clone repository
-• Open project directory in IDE
-• python main.py in terminal
+• Clone repository  
+• Open project directory in IDE  
+• python main.py in terminal  
 
 # A few features of TK-Calendar:
 
